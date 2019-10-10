@@ -1,30 +1,6 @@
-This repo contains a pytorch implementation of the wonderful model-based Reinforcement Learning algorithms proposed in [Deep Reinforcement Learning in a Handful of Trials using Probabilistic Dynamics Models](https://arxiv.org/abs/1805.12114).
+This repo is modeled over [Quan Vuong's pytorch implementation](https://github.com/quanvuong/handful-of-trials-pytorch) of the algorithm described in [Deep Reinforcement Learning in a Handful of Trials using Probabilistic Dynamics Models](https://arxiv.org/abs/1805.12114).
 
-As of now, the repo only supports the most high-performing variant: probabilistic ensemble for the learned dynamics model, TSinf trajectory sampling and Cross Entropy method for action optimization.
-
-The code is structured with the same levels of abstraction as the original TF implementation, with the exception that the TF dynamics model is replaced by a Pytorch dynamics model.
-
-I'm happy to take pull request if you see ways to improve the repo :).
-
-## Performance
-
-![](graphs/cartpole.png) ![](graphs/pusher.png)
-
-![](graphs/reacher.png)
-
-The y-axis indicates the maximum reward seen so far, as is done in the paper.
-
-On the seed I have specified in the code, I could not get the same result as the paper on HalfCheetah. I had combed through the code but couldn’t find any potential bugs. 
-
-I suspect the lower performance is because HC has deceptive modes in the objective function surface, and therefore high variance in performance. 
-
-To get to 15k episode return, the HC needs to run on its legs. However, another mode is for the HC to flip on its back and wiggle its legs. 
-
-Even SAC is stuck in this mode for some initial seeds. 
-
-https://github.com/rail-berkeley/softlearning/issues/75
-
-I didn’t have time to pursue this issue further. If you encounter this issue, try to render the behavior of the HC, I think that will be very helpful in figuring out the issue.
+A work in progress!
 
 ## Requirements
 
